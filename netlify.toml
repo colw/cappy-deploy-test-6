@@ -1,3 +1,10 @@
 [build]
   command = "npm run build"
   functions = "./functions"
+
+[template]
+  branch = "main"
+
+[template.environment]
+  NS_URI = "change me to the nightscout ur=l + '/api/v3'"
+  NS_TOKEN = "Set your custom Nightscout subject token here"
