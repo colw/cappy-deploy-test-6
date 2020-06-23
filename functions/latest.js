@@ -1,6 +1,6 @@
-var request = require("request");
+var request = require("got");
 
-exports.handler = async (event) => {
+exports.handler = async (event, context) => {
   const now = new Date();
   const uri = process.env.NS_URI;
   const path = "/entries";
@@ -13,20 +13,20 @@ exports.handler = async (event) => {
   ].join("&");
 
   const uriString = uri + path + "?" + options;
-  request(uriString, function (error, response, body) {
-    if (error) {
-      return {
-        statusCode: error.statusCode || 500,
-        body: JSON.stringify({
-          message:
-            "Could not retrieve latest glucose reading. Check URL of Nightscout site.",
-        }),
-      };
-    } else {
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ glucose: JSON.parse(body)[0] }),
-      };
-    }
-  });
+  const error = {};
+  const r = await got.get(uriString);
+  if (error) {
+    return {
+      statusCode: error.statusCode || 500,
+      body: JSON.stringify({
+        message:
+          "Could not retrieve latest glucose reading. Check URL of Nightscout site.",
+      }),
+    };
+  } else {
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ glucose: JSON.parse(reponse.body)[0] }),
+    };
+  }
 };
