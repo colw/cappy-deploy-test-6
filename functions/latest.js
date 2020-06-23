@@ -14,21 +14,9 @@ exports.handler = async (event, context) => {
   ].join("&");
 
   const uriString = uri + path + "?" + options;
-  const error = {};
-  const r = await got.get(uriString);
-  if (error) {
-    return {
-      statusCode: error.statusCode || 500,
-      body: JSON.stringify({
-        message:
-          "Could not retrieve latest glucose reading. Check URL of Nightscout site.",
-        uri: uriString,
-      }),
-    };
-  } else {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ glucose: JSON.parse(reponse.body)[0] }),
-    };
-  }
+  const response = await got.get(uriString);
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ glucose: JSON.parse(response.body)[0] }),
+  };
 };
