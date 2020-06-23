@@ -1,4 +1,5 @@
 var got = require("got");
+require("dotenv").config();
 
 exports.handler = async (event, context) => {
   const now = new Date();
@@ -21,6 +22,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({
         message:
           "Could not retrieve latest glucose reading. Check URL of Nightscout site.",
+        uri: uriString,
       }),
     };
   } else {
