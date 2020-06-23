@@ -1,4 +1,4 @@
-var request = require("got");
+var got = require("got");
 
 exports.handler = async (event, context) => {
   const now = new Date();

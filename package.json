@@ -11,14 +11,15 @@
     "start": "webpack --config webpack.config.cjs && node --experimental-modules server.js"
   },
   "dependencies": {
+    "babel-loader": "^8.1.0",
     "express": "^4.17.1",
+    "got": "^11.3.0",
     "jsx-loader": "^0.13.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "recharts": "^1.8.5",
     "request": "^2.88.2",
-    "swr": "^0.2.3",
-    "babel-loader": "^8.1.0",
-    "recharts": "^1.8.5"
+    "swr": "^0.2.3"
   },
   "engines": {
     "node": "12.x"
