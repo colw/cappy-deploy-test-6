@@ -6,5 +6,5 @@
   branch = "main" # This does not work.
 
 [template.environment]
-  NS_URI = "change me to the nightscout url + '/api/v3'"
+  NS_URI = "https://yoursite.herokuapp.com/api/v3"
   NS_TOKEN = "Set your custom Nightscout subject token here"
