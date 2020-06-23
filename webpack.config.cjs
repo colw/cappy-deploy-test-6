@@ -1,8 +1,7 @@
-// import path from "path";
-var path = require("path");
+const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   context: path.join(__dirname, "./"),
   entry: "./app/app.js",
   output: {
