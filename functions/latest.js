@@ -1,5 +1,4 @@
-import express from "express";
-var request = require("request");
+import request from "request";
 
 exports.handler = async (event) => {
   const now = new Date();
