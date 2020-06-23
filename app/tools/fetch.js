@@ -1,6 +1,6 @@
 export async function fetchSugar() {
   try {
-    const response = await window.fetch("/latest");
+    const response = await window.fetch("/.netlify/functions/latest");
     const data = await response.json();
     return data.glucose;
   } catch (e) {
@@ -10,7 +10,7 @@ export async function fetchSugar() {
 
 export async function fetchLast24() {
   try {
-    const response = await window.fetch("/last24");
+    const response = await window.fetch("/.netlify/functions/last24");
     const data = await response.json();
     return data.glucoseValues;
   } catch (e) {
