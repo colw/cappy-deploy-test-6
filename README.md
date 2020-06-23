@@ -1,3 +1,7 @@
+# cappy
+
+A simplified view of a Nightscout instance
+
 Need more power?  
 [Boost your Glitch apps for improved performance!](https://glitch.com/boost)  
 ------------
