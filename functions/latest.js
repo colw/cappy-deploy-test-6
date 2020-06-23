@@ -12,6 +12,7 @@ exports.handler = async (event) => {
     "limit=1",
   ].join("&");
 
+  const uriString = uri + path + "?" + options;
   request(uriString, function (error, response, body) {
     if (error) {
       return {
