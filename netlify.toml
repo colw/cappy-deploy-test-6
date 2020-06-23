@@ -3,7 +3,7 @@
   functions = "./functions"
 
 [template]
-  branch = "main"
+  branch = "main" # This does not work.
 
 [template.environment]
   NS_URI = "change me to the nightscout url + '/api/v3'"
