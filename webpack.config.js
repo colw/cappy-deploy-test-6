@@ -1,15 +1,15 @@
-const path = require("path");
+import path from "path";
 
-module.exports = {
+export default {
   mode: "development",
   context: path.join(__dirname, "./"),
   entry: "./app/app.js",
   output: {
     path: path.join(__dirname, "public"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -19,10 +19,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
-          }
-        }
-      }
-    ]
-  }
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
+    ],
+  },
 };
